@@ -1,0 +1,21 @@
+# QuickServ.pi 🍽️
+
+**A Pi Network-powered food delivery app.**
+
+## 🌟 Features
+- Restaurant listings
+- AI chatbot assistant
+- Pi Network Testnet payments
+- Multi-language support
+- GitHub Pages live hosting
+
+## 🔗 Live Demo
+👉 [Click here to try it](https://orestiisss.github.io/quickserv-pi/)
+
+## 🔧 Tech Stack
+- HTML + Tailwind CSS
+- JavaScript
+- GitHub Pages
+
+## ⚠️ Disclaimer
+This project is in **testnet only** and not for commercial use yet.
