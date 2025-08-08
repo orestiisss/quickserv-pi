@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickServ.pi</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="chatbot.js"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-orange-500 text-white p-4 text-center text-2xl font-bold">🔥 QuickServ.pi</header>
+
+  <main class="p-4">
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">Featured Restaurants</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="p-4 border rounded bg-white shadow">
+          <h3 class="text-lg font-bold">Quick Bites</h3>
+          <p>Chicken Shawarma Wrap<br>Veggie Falafel Bowl</p>
+        </div>
+        <div class="p-4 border rounded bg-white shadow">
+          <h3 class="text-lg font-bold">Burger Express</h3>
+          <p>Double Cheeseburger<br>Sweet Potato Fries</p>
+        </div>
+        <div class="p-4 border rounded bg-white shadow">
+          <h3 class="text-lg font-bold">Sushi World</h3>
+          <p>Dragon Roll<br>Tofu Miso Soup</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-6">
+      <button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded">Mock Pi Payment</button>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Need help?</h2>
+      <div id="chatbot" class="p-4 border rounded bg-gray-100 h-48 overflow-y-auto text-sm">
+        <p><strong>Bot:</strong> Hi! How can I help you with your order?</p>
+      </div>
+      <input id="user-input" type="text" placeholder="Type a message..." class="mt-2 p-2 border rounded w-full">
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 text-center p-4 mt-6 text-sm">
+    <a href="privacy.html" class="text-blue-500">Privacy Policy</a> | <a href="terms.html" class="text-blue-500">Terms of Use</a>
+  </footer>
+</body>
+</html>
