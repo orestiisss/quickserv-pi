@@ -1,50 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>QuickServ.pi</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <script defer src="chatbot.js"></script>
+  <script defer src="cart.js"></script>
 </head>
-<body class="bg-white text-gray-800">
-  <header class="bg-orange-500 text-white p-4 text-center text-2xl font-bold">🔥 QuickServ.pi</header>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <header class="bg-orange-600 text-white p-4 text-center text-2xl font-bold shadow">
+    🔥 QuickServ.pi
+  </header>
 
   <main class="p-4">
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold mb-2">Featured Restaurants</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="p-4 border rounded bg-white shadow">
-          <h3 class="text-lg font-bold">Quick Bites</h3>
-          <p>Chicken Shawarma Wrap<br>Veggie Falafel Bowl</p>
-        </div>
-        <div class="p-4 border rounded bg-white shadow">
-          <h3 class="text-lg font-bold">Burger Express</h3>
-          <p>Double Cheeseburger<br>Sweet Potato Fries</p>
-        </div>
-        <div class="p-4 border rounded bg-white shadow">
-          <h3 class="text-lg font-bold">Sushi World</h3>
-          <p>Dragon Roll<br>Tofu Miso Soup</p>
-        </div>
-      </div>
-    </section>
+    <div class="flex justify-between mb-4">
+      <h2 class="text-xl font-semibold">Featured Restaurants</h2>
+      <select id="lang" class="p-1 rounded border text-sm">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="zh">中文</option>
+        <option value="ar">العربية</option>
+        <option value="hi">हिन्दी</option>
+        <option value="pt">Português</option>
+      </select>
+    </div>
 
-    <section class="mb-6">
-      <button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded">Mock Pi Payment</button>
-    </section>
-
-    <section>
-      <h2 class="text-xl font-semibold mb-2">Need help?</h2>
-      <div id="chatbot" class="p-4 border rounded bg-gray-100 h-48 overflow-y-auto text-sm">
-        <p><strong>Bot:</strong> Hi! How can I help you with your order?</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-bold text-lg">Quick Bites</h3>
+        <button onclick="addToCart('Chicken Shawarma Wrap')" class="text-sm mt-2 bg-orange-500 text-white px-2 py-1 rounded">Add Shawarma</button>
+        <button onclick="addToCart('Veggie Falafel Bowl')" class="text-sm mt-1 bg-orange-500 text-white px-2 py-1 rounded">Add Falafel</button>
       </div>
-      <input id="user-input" type="text" placeholder="Type a message..." class="mt-2 p-2 border rounded w-full">
-    </section>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-bold text-lg">Burger Express</h3>
+        <button onclick="addToCart('Double Cheeseburger')" class="text-sm mt-2 bg-orange-500 text-white px-2 py-1 rounded">Add Burger</button>
+        <button onclick="addToCart('Sweet Potato Fries')" class="text-sm mt-1 bg-orange-500 text-white px-2 py-1 rounded">Add Fries</button>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-bold text-lg">Sushi World</h3>
+        <button onclick="addToCart('Dragon Roll')" class="text-sm mt-2 bg-orange-500 text-white px-2 py-1 rounded">Add Roll</button>
+        <button onclick="addToCart('Tofu Miso Soup')" class="text-sm mt-1 bg-orange-500 text-white px-2 py-1 rounded">Add Soup</button>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow mb-6">
+      <h3 class="text-lg font-semibold mb-2">🛒 Your Cart</h3>
+      <ul id="cart" class="text-sm list-disc pl-4"></ul>
+      <button onclick="checkout()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded">Mock Pi Checkout</button>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow">
+      <h3 class="text-lg font-semibold mb-2">🤖 Chatbot Assistant</h3>
+      <div id="chatbot" class="bg-gray-100 p-3 rounded h-48 overflow-y-auto text-sm">
+        <p><strong>Bot:</strong> Hello! How can I help you today?</p>
+      </div>
+      <input id="user-input" type="text" placeholder="Type your message..." class="w-full p-2 mt-2 border rounded">
+    </div>
   </main>
 
-  <footer class="bg-gray-100 text-center p-4 mt-6 text-sm">
-    <a href="privacy.html" class="text-blue-500">Privacy Policy</a> | <a href="terms.html" class="text-blue-500">Terms of Use</a>
+  <footer class="text-center text-sm text-gray-500 p-4">
+    <a href="privacy.html" class="underline">Privacy Policy</a> |
+    <a href="terms.html" class="underline">Terms of Use</a>
   </footer>
 </body>
 </html>
